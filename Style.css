@@ -1,0 +1,473 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: black;
+  color: #e7e7e7;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.image-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.layer-blur {
+  height: 0;
+  width: 30rem;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  box-shadow: 0 0 700px 15px white;
+  rotate: -30deg;
+  z-index: -1;
+}
+
+.logo-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1rem 5rem; 
+  position: relative;
+  width: 100%; 
+  height: 80px; 
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-and-button-container {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 20px; 
+  position: absolute; 
+  left: 50%;          
+  transform: translateX(-50%); 
+  z-index: 1; 
+}
+
+
+nav {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 20px 50px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+nav a:hover {
+  color: lightgray;
+}
+
+.btn-sign {
+  background-color: transparent;
+  color: gold;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  z-index: 999;
+}
+
+.btn-sign:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn-sign:active {
+  transform: translateY(1px);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(90vh - 6rem); 
+}
+
+.content {
+  max-width: 40rem;
+  margin-left: 5%;
+  z-index: 999;
+}
+
+.tag{
+  padding: 8px 40px;
+  width: 10rem;
+  position: relative;
+  height: 2.5rem;
+  border-radius: 50px;
+  background: linear-gradient(to right,blueviolet , gold, black);
+  background-size: 200%;
+  animation: animateGradient 2.5s linear infinite;
+  box-shadow: 0 0 15px rgba(red, green, blue, alpha);
+}
+
+@keyframes animateGradient {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.tag{
+  cursor: pointer;
+  background-color: black;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5 ease;
+}
+
+.tag-box .tag:hover {
+  color: whitesmoke;
+}
+
+.content h1{
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin: 2rem 0;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  max-width: 35rem;
+}
+
+.button {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.btn-get-started {
+  text-decoration: none;
+  border: 1px solid #2a2a2a;
+  padding: 0.7rem  1.2rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: background-color 0.2s ease;
+}
+
+.btn-get-started:hover {
+  background-color: #1a1a1a;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+
+.btn-sign-main {
+  text-decoration: none;
+  background-color: lightgray;
+  padding: 0.7rem  2.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+   transition: background-color 0.2s ease;
+}
+
+.btn-sign-main:hover {
+  background-color: gold;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.robot-3d {
+  position: absolute;
+  top: 0;
+  right: -20%;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1300px){
+  header {
+    padding: 1 rem 0.5rem;
+  }
+
+  .content {
+    margin-top: 85%;
+  }
+
+  .robot-3d {
+    scale: 0.8;
+    top: -20%;
+    right: 2%;
+  }
+}
+
+/* Tablet Responsive ipad air */
+@media (max-width: 1024px) {
+    /* --- Penyesuaian Header --- */
+    .logo-header {
+        padding: 1rem 3rem; /* Kurangi padding samping */
+        height: 70px; /* Sedikit kurangi tinggi header */
+    }
+
+    .logo-header .logo {
+        font-size: 1.8em; /* Sedikit perkecil ukuran font logo */
+    }
+
+    .nav-and-button-container {
+        gap: 15px; /* Kurangi jarak antara nav dan button */
+        /* Jika elemen tumpang tindih, Anda mungkin perlu menyesuaikan 'left' dan 'transform' */
+        /* Misalnya, untuk menggeser ke kiri jika ada terlalu banyak padding/margin */
+        /* left: calc(50% + 20px); */ /* Contoh: jika ada elemen lain yang mendorongnya */
+    }
+
+    nav a {
+        font-size: 15px; /* Sedikit perkecil ukuran font nav link */
+        padding: 8px 18px; /* Kurangi padding nav link */
+    }
+
+    .btn-sign {
+        font-size: 15px; /* Sedikit perkecil ukuran font tombol */
+        padding: 7px 12px; /* Kurangi padding tombol */
+    }
+
+    /* --- Penyesuaian Konten Utama --- */
+    main {
+        padding: 1rem; /* Kurangi padding keseluruhan pada main */
+        min-height: calc(100vh - 70px); /* Sesuaikan min-height berdasarkan tinggi header baru */
+    }
+
+    .content {
+        max-width: 90%; /* Kontainer konten mengambil 90% lebar layar */
+        /* margin: 0 auto; sudah ada, pastikan tidak ada margin-left/right yang mengganggu */
+        padding: 15px; /* Kurangi padding di dalam .content */
+    }
+
+    /* Penyesuaian Kotak Kuning (.tag-box) */
+    .tag-box {
+        border-radius: 40px; /* Sedikit kurangi border-radius */
+        padding: 25px 30px; /* Kurangi padding internal kotak kuning */
+    }
+
+    .tag { /* Tag "Intoducing" */
+        padding: 7px 12px; /* Kurangi padding tag */
+        font-size: 0.8em;
+        margin-bottom: 15px; /* Sesuaikan jarak */
+        /* margin-left: -15px; /* Pertahankan ini jika sebelumnya sudah berfungsi untuk penyelarasan teks */
+    }
+
+    .main-heading { /* Judul besar di dalam kotak */
+        font-size: 2.2em; /* Perkecil ukuran font heading utama */
+    }
+
+    .description { /* Paragraf deskripsi */
+        font-size: 0.95em; /* Sedikit perkecil ukuran font deskripsi */
+    }
+
+    /* Kontainer Link (Dokumentasi & Get Started) */
+    .links-container {
+        gap: 15px; /* Kurangi jarak antar tombol link */
+        flex-wrap: wrap; /* Jika tombol terlalu panjang, biarkan mereka pindah baris */
+        justify-content: center; /* Pusat tombol jika pindah baris */
+    }
+
+    .btn-get-started, .btn-sign-main {
+        font-size: 0.9em; /* Perkecil ukuran font tombol link */
+        padding: 8px 15px; /* Kurangi padding tombol link */
+    }
+}
+
+/* Smartphone (Lanskap) & Tablet Kecil (iPad Air Potret) - Max 768px */
+@media (max-width: 768px) {
+    .logo-header {
+        padding: 1rem 1rem; /* Kurangi padding header lagi */
+        height: 60px; /* Lebih kecil lagi */
+    }
+    .logo {
+        font-size: 1.5em;
+    }
+    .nav-and-button-container {
+        gap: 5px; /* Kurangi jarak lagi */
+    }
+    nav a {
+        font-size: 13px;
+        padding: 4px 8px;
+    }
+    .btn-sign {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+    main {
+        padding: 0.5rem;
+        min-height: calc(100vh - 60px);
+    }
+    .content {
+        max-width: 95%; /* Konten mengambil lebih banyak lebar */
+        padding: 10px;
+    }
+    .tag-box {
+        border-radius: 25px;
+        padding: 20px 25px;
+    }
+    .tag {
+        font-size: 0.7em;
+        padding: 5px 8px;
+        margin-bottom: 10px;
+        margin-left: -10px; /* Sesuaikan offset */
+    }
+    .main-heading {
+        font-size: 1.8em;
+        margin: 1.5rem 0;
+    }
+    .description {
+        font-size: 0.9em;
+    }
+    .links-container {
+        gap: 10px;
+        flex-direction: row; /* Biarkan tombol sejajar jika masih muat */
+        justify-content: center; /* Pusatkan tombol jika ada ruang */
+    }
+    .btn-get-started, .btn-sign-main {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+    .robot-3d {
+        scale: 0.5; /* Perkecil robot sangat banyak */
+        top: -10%;
+        right: 0%; /* Geser agar sebagian besar tersembunyi */
+    }
+}
+
+/* Smartphone (Potret) - Max 480px (mis. iPhone 14 Pro Max) */
+@media (max-width: 480px) {
+    .logo-header {
+        padding: 1rem 0.5rem; /* Padding sangat kecil untuk header */
+        height: 50px; /* Header lebih kecil */
+        flex-wrap: wrap; /* Biarkan item header membungkus */
+        justify-content: center; /* Pusatkan item header */
+    }
+    .logo {
+        font-size: 1.3em;
+        margin-bottom: 5px; /* Tambahkan margin jika membungkus */
+    }
+    .nav-and-button-container {
+        position: static; /* Hapus posisi absolut agar mengikuti aliran normal */
+        transform: none; /* Hapus transformasi */
+        flex-direction: column; /* Tumpuk nav dan button */
+        align-items: center; /* Pusatkan nav dan button */
+        gap: 5px;
+        width: 100%; /* Ambil lebar penuh */
+        margin-top: 5px; /* Jarak dari logo jika membungkus */
+    }
+    nav {
+        display: none;
+    }
+    nav a {
+        font-size: 12px;
+        padding: 4px 8px;
+        width: 100%; /* Link ambil lebar penuh jika menumpuk */
+        text-align: center;
+    }
+    .btn-sign {
+        font-size: 12px;
+        padding: 4px 8px;
+        width: 80%; /* Tombol login ambil lebar tertentu */
+        margin-top: 5px;
+    }
+    
+    main {
+        padding: 0.5rem;
+        min-height: calc(100vh - 50px);
+        padding-top: 80%;
+    }
+    .content {
+        max-width: 100%; /* Konten mengambil lebar penuh */
+        padding: 10px; /* Kurangi padding konten */
+    }
+    .tag-box {
+        border-radius: 20px;
+        padding: 15px 15px; /* Kurangi padding kotak kuning */
+        margin-bottom: 20px;
+    }
+    .tag {
+        font-size: 0.7em;
+        padding: 5px 8px;
+        margin-left: 0; /* Hapus margin negatif agar sejajar dengan konten box */
+    }
+    .main-heading {
+        font-size: 1.5em; /* Judul lebih kecil */
+        margin: 1rem 0;
+    }
+    .description {
+        font-size: 0.85em; /* Deskripsi lebih kecil */
+    }
+    .links-container {
+        gap: 8px;
+        flex-direction: column; /* <--- KUNCI: Tumpuk tombol secara vertikal */
+        align-items: center; /* Pusatkan tombol yang menumpuk */
+        margin-top: 1.5rem;
+    }
+    .btn-get-started, .btn-sign-main {
+        font-size: 0.8em;
+        padding: 6px 12px;
+        width: 80%; /* Tombol ambil sebagian besar lebar layar */
+        text-align: center;
+    }
+    .robot-3d {
+        top: -25%;
+        right: 0%; /* Tetap geser agar sebagian besar tersembunyi */
+    }
+}
+
+/* Smartphone Kecil (Potret) - Max 390px (mis. iPhone 14 Pro) */
+@media (max-width: 390px) {
+    .logo-header {
+        height: 45px;
+    }
+    .logo {
+        font-size: 1.1em;
+    }
+    nav a {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    .btn-sign {
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    .main-heading {
+        font-size: 1.3em;
+    }
+    .description {
+        font-size: 0.8em;
+    }
+    .btn-get-started, .btn-sign-main {
+        font-size: 0.75em;
+        padding: 5px 10px;
+    }
+}
